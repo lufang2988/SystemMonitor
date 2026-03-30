@@ -1,0 +1,26 @@
+name: SystemMonitor
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    macOS: "13.0"
+  xcodeVersion: "15.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+
+targets:
+  SystemMonitor:
+    type: application
+    platform: macOS
+    sources:
+      - SystemMonitor
+      - Assets.xcassets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.SystemMonitor
+        INFOPLIST_FILE: SystemMonitor/Info.plist
+        CODE_SIGN_ENTITLEMENTS: SystemMonitor/SystemMonitor.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+        COMBINE_HIDPI_IMAGES: true
